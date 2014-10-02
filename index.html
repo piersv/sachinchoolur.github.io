@@ -1,10 +1,44 @@
 <!DOCTYPE html>
 <html>
-<body>
+	<head>
+		<link rel="stylesheet" type="text/css" href="base.css">
+		<style type="text/css">
 
-<h1>My First Heading</h1>
-
-<p>My first paragraph.</p>
-
-</body>
+			.container-fluid {
+			    padding-top: 60px;
+			}
+			.info a {
+			    display: block;
+			    font-size: 16px;
+			    padding: 10px 0;
+			}
+			.info > p {
+			    font-size: 14px;
+			    margin-top: 0;
+			    max-width: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+                <div class="col-sm-6">
+                	<div class="cont">
+                		<div class="imgCont"><img src="lightGallery.jpg"></div>
+                		<div class="info"><a href="http://sachinchoolur.github.io/lightGallery/">Jquery lightGallery</a>
+							<p>Responsive &amp; Touch-Friendly jQuery Gallery Lightbox Plugin - lightGallery</p>
+						</div>
+                	</div>
+                </div>
+                <div class="col-sm-6">
+                	<div class="cont">
+                		<div class="imgCont"><img src="lightSlider.jpg"></div>
+                		<div class="info"><a href="http://sachinchoolur.github.io/lightslider/">Jquery lightSlider</a>
+							<p>JQuery lightSlider is a lightweight responsive Content slider with carousel thumbnails navigation</p>
+						</div>
+                	</div>	
+                </div>
+            </div>
+		</div>
+	</body>
 </html>
