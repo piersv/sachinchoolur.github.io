@@ -1,0 +1,104 @@
+// Core variables and mixins
+@import "variables";
+@import "mixins";
+@import "fonts";
+@import "theme.default.scss";
+@import "animations.scss";
+@import "thumbnail.scss";
+
+
+// lightgallery core
+.lGalleryOuter{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index:99999;
+	background: $lGalleryBg;
+	&.lGalleryCSS3{
+		.lGalleryItem{
+			&.lGalleryPrevSlide, &.lGalleryNextSlide, &.lGalleryCurrent{
+				@include transition-duration(inherit);
+				@include transition-timing-function(inherit);
+			}
+		}
+	}
+	&.lGalleryCSS3.lGalleryDragging{
+		.lGalleryItem{
+			&.lGalleryPrevSlide, &.lGalleryNextSlide, &.lGalleryCurrent{
+				@include transition-duration(0s);
+				opacity: 1;
+			}
+		}
+	}
+	&.lGalleryGrab{
+		img.lGalleryObject{
+			@include grab-cursor;
+		}
+	}
+	&.lGalleryGrabbing{
+		img.lGalleryObject{
+			@include grabbing-cursor;
+		}
+	}
+	.lGallery {
+		height: 100%;
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 100%;
+		max-height: 100%;
+	}
+	.lGalleryInner{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		white-space: nowrap;
+	}
+	.lGalleryItem{
+		background: url(../img/loading.gif) no-repeat scroll center center transparent;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		position: absolute;
+		display: inline-block;
+		text-align: center;
+		&.lGalleryComplete{
+			background-image: none;
+		}
+		&:before {
+			content: "";
+			display: inline-block;
+			height: 50%;
+			width: 1px;
+			margin-right: -1px;
+		}
+		&.lGalleryCurrent {
+			z-index: 9;
+		}
+		> img {
+			display: inline-block;
+			vertical-align: middle;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+	&.lGalleryShowAfterLoad{
+		.lGalleryItem{
+			> * {
+				opacity: 0;
+			}
+			&.lGalleryComplete{
+				> *{
+					opacity: 1;
+				}
+			}
+		}	
+	}
+}

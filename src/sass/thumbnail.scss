@@ -1,0 +1,32 @@
+.lGalleryOuter{
+	.lGalleryThumbOuter {
+	    background-color: #000;
+	    bottom: 0;
+	    height: 100px;
+	    padding: 10px 0;
+	    position: absolute;
+	    width: 100%;
+	    z-index: 9;
+	}
+	.lGalleryThumbItem {
+	    border-radius: 5px;
+	    cursor: pointer;
+	    float: left;
+	    opacity: 0.7;
+	    overflow: hidden;
+	    @include transition(opacity 0.25s ease);
+	    &.active, &:hover{
+	    	opacity: 1;
+	    }
+	}
+	.lGalleryThumb{
+		&.on{
+			@include transitionCustom(transform 1s cubic-bezier(0, 0, 0.25, 1) 0s);
+		}
+	}
+	&.hasThumbnail{
+		.lGalleryItem{
+			padding-bottom:120px;	
+		}
+	}
+}
